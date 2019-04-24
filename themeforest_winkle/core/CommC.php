@@ -1,5 +1,6 @@
 <?PHP
 include "C:/wamp64/www/themeforest_winkle/config.php";
+
 class CommC {
 function afficherComm ($comm){
                 echo "name: ".$comm->getname()."<br>";

@@ -1,27 +1,25 @@
 <?PHP
+include "C:/wamp64/www/themeforest_winkle/config.php";
 
-include "reactionC.php";
-class CommC {
-function afficherComm ($comm){
-                echo "name: ".$comm->getname()."<br>";
-                echo "login: ".$comm->getlogin()."<br>";
-                echo "comment: ".$comm->getcomment()."<br>";
+class reactionC {
+function afficherreaction ($reaction){
+                echo "id: ".$reaction->getid()."<br>";
+                echo "type: ".$reaction->gettype()."<br>";
                
         }
        
-        function ajouterComm($comm){
-                $sql="insert into commentaire (name,login,comment) values (:name, :login,:comment)";
+        function ajouterreaction($reaction){
+                $sql="insert into reaction (id,type) values (:id, :type)";
                 $db = config::getConnexion();
                 try{
         $req=$db->prepare($sql);
                 
-        $name=$comm->getname();
-        $login=$comm->getlogin();
-        $comment=$comm->getcomment();
+        $id=$reaction->getid();
+        $type=$reaction->gettype();
         
-                $req->bindValue(':name',$name);
-                $req->bindValue(':login',$login);
-                $req->bindValue(':comment',$comment);
+                $req->bindValue(':id',$id);
+                $req->bindValue(':type',$type);
+
                
                 
             $req->execute();
@@ -33,9 +31,9 @@ function afficherComm ($comm){
                 
         }
         
-        function afficherComms(){
+        function afficherreactions(){
                 //$sql="SElECT * From employe e inner join formationphp.employe a on e.cin= a.cin";
-                $sql="SElECT * From commentaire";
+                $sql="SElECT * From reaction";
                 $db = config::getConnexion();
                 try{
                 $liste=$db->query($sql);
@@ -45,11 +43,11 @@ function afficherComm ($comm){
             die('Erreur: '.$e->getMessage());
         }       
         }
-        function supprimerComm($login){
-                $sql="DELETE FROM commentaire where login= :login";
+        function supprimerreaction($id){
+                $sql="DELETE FROM reaction where id= :id";
                 $db = config::getConnexion();
         $req=$db->prepare($sql);
-                $req->bindValue(':login',$login);
+                $req->bindValue(':id',$id);
                 try{
             $req->execute();
            // header('Location: index.php');
@@ -58,23 +56,20 @@ function afficherComm ($comm){
             die('Erreur: '.$e->getMessage());
         }
         }
-        function modifierComm($comm,$login){
-                $sql="UPDATE commentaire SET name=:name, login=:login,comment=:commentn WHERE login=:login";
+        function modifierreaction($reaction,$id){
+                $sql="UPDATE reaction SET id=:id, type=:typen WHERE id=:id";
                 
                 $db = config::getConnexion();
                 //$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 try{            
         $req=$db->prepare($sql);
-        $commentn=$comm->getcomment();
-        $comment=$comm->getcomment();
-        $name=$comm->getname();
-        $login=$comm->getlogin();
+        $typen=$reaction->gettype();
+        $id=$reaction->getid();
         
-                $datas = array(':name'=>$name, ':login'=>$login,':commentn'=>$commentn,':comment'=>$comment);
-                $req->bindValue(':commentn',$commentn);
-                $req->bindValue(':name',$name);
-                $req->bindValue(':login',$login);
-                $req->bindValue(':comment',$comment);
+                $datas = array(':id'=>$id, ':typen'=>$typen,':type'=>$type);
+                $req->bindValue(':typen',$typen);
+                $req->bindValue(':id',$id);
+                $req->bindValue(':type',$type);
                 
                 
                 
@@ -89,9 +84,9 @@ try{
         }
                 
         }
-        function recupererComm($login){
+        function recupererreaction($id){
                 $db = config::getConnexion();
-                $sql="SELECT * from commentaire where login=($login)" ;
+                $sql="SELECT * from reaction where id=($id)" ;
                 try{
                 $liste=$db->query($sql);
                 return $liste;
@@ -100,7 +95,7 @@ try{
             die('Erreur: '.$e->getMessage());
         }
         }
-       
+        
 }
 
 ?>

@@ -27,11 +27,15 @@
 	</head>
 	<?PHP
 include "../core/CommC.php";
+
 $comm1C=new CommC();
 $listeComm=$comm1C->afficherComms();
+$reaction1C=new reactionC();
+$listereaction=$reaction1C->afficherreactions();
 
 //var_dump($listeEmployes->fetchAll());
 ?>
+
 
 	<body>
 
@@ -142,7 +146,9 @@ $listeComm=$comm1C->afficherComms();
 					</div>
 				</div>
 				<div class="navbar-container">
+
 					<div class="navbar navbar-default navbar-scroll-fixed">
+
 						<div class="navbar-default-wrap">
 							<div class="container">
 								<div class="row">
@@ -158,6 +164,8 @@ $listeComm=$comm1C->afficherComms();
 												<a class="navbar-search-button search-icon-mobile" href="#">
 													<i class="fa fa-search"></i>
 												</a>
+
+
 												<a class="cart-icon-mobile" href="#">
 													<i class="elegant_icon_bag"></i><span>0</span>
 												</a>
@@ -180,6 +188,7 @@ $listeComm=$comm1C->afficherComms();
 															<li><a href="home-v5.html">Home v5</a></li>
 														</ul>
 													</li>
+
 													<li class="menu-item-has-children megamenu megamenu-fullwidth dropdown">
 														<a href="shop.html" class="dropdown-hover">
 															<span class="underline">Shop</span> <span class="caret"></span>
@@ -273,7 +282,9 @@ $listeComm=$comm1C->afficherComms();
 													</li>
 												</ul>
 											</nav>
+
 											<div class="header-right">
+												
 												<div class="navbar-search">
 													<a class="navbar-search-button" href="#">
 														<i class="fa fa-search"></i>
@@ -301,12 +312,20 @@ $listeComm=$comm1C->afficherComms();
 								</div>
 							</div>
 						</div>
+
 						<div class="header-search-overlay hide">
 							<div class="container">
 								<div class="header-search-overlay-wrap">
-									<form class="searchform">
-										<input type="search" class="searchinput" name="s" autocomplete="off" value="" placeholder="Search..."/>
-									</form>
+									
+										
+                                        <form action = "verifform.php" method = "get">
+                                            <input type = "search" name = "terme">
+                                          
+                                      
+                                       <input  type = "submit" name = "s" value="Rechercher">
+                                           
+                                        </form>
+									
 									<button type="button" class="close">
 										<span aria-hidden="true" class="fa fa-times"></span>
 										<span class="sr-only">Close</span>
@@ -542,6 +561,30 @@ foreach($listeComm as $row){
 }
 ?>
 </table>
+<table border="1">
+<tr>
+<td>Id</td>
+<td>Type</td>
+</tr>
+
+<?PHP
+foreach($listereaction as $row){
+	?>
+	<tr>
+	<td><?PHP echo $row['id']; ?></td>
+	<td><?PHP echo $row['type']; ?></td>
+	<td><form method="POST" action="supprimerreaction.php">
+	<input type="submit" name="supprimer" value="supprimer">
+	<input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
+	</form>
+	</td>
+	<td><a href="modifierreaction.php?id=<?PHP echo $row['id']; ?>">
+	Modifier</a></td>
+	</tr>
+	<?PHP
+}
+?>
+</table>
 																	<div class="comment-respond">
 																		<form method="POST" action="ajoutComm.php">
 																			<table>
@@ -566,6 +609,31 @@ foreach($listeComm as $row){
 																			<tr>
 																			<td></td>
 																			<td><input type="submit" name="ajouter" value="Ajouter" id="bouton"></td>
+																			</tr>
+																			</table>
+																			</form>
+																			<form method="POST" action="ajoutreaction.php">
+																			<table>
+																			<caption>Ajouter Reaction</caption>
+																			<tr>
+																			<td>Id</td>
+																			<td><input type="text" name="idr" id="idr"required></td>
+																			<td><span id="missidr"></span></td>
+																			</tr>
+																			<tr>
+
+																			<td>Type</td>
+																				
+																				<td>
+	<input type="radio" name="type" <?php if (isset($type) && $type=="J'aime") echo "checked";?> value="J'aime">J'aime
+  	<input type="radio" name="type" <?php if (isset($type) && $type=="Je n'aime pas") echo "checked";?> value="Je n'aime pas">Je n'aime pas
+  <br><br>
+
+																				</td>
+																			</tr>
+																			<tr>
+																			<td></td>
+																			<td><input type="submit" name="ajouter" value="Ajouter" id="bouton1"></td>
 																			</tr>
 																			</table>
 																			</form>
@@ -1236,6 +1304,26 @@ foreach($listeComm as $row){
                     missidcomm.style.color = 'red';
                 }
             }</script>
-
+            <script>
+    	var formValid = document.getElementById('bouton1');
+            var idr = document.getElementById('idr');
+            var missidr = document.getElementById('missidr');
+            var idrValid = /[0-9]/;
+            
+            formValid.addEventListener('click', validation6);
+            
+            function validation6(event){
+				//Si le champ est vide
+                if (idr.validity.valueMissing){
+                    event.preventDefault();
+                    missidr.textContent = 'Id manquant';
+                    missidr.style.color = 'red';
+                //Si le format de données est incorrect
+                }else if (idrValid.test(idr.value) == false){
+                    event.preventDefault();
+                   missidr.textContent = 'Format incorrect';
+                   missidr.style.color = 'orange';
+               }
+            }</script>
 	</body>
 </html>

@@ -44,32 +44,34 @@
   </head>
     
  <body>
+
 <?PHP
-include "../entities/comm.php";
-include "../core/commC.php";
-if (isset($_GET['login'])){
-	$commC=new CommC();
-    $result=$commC->recupererComm($_GET['login']);
+include "../entities/reaction.php";
+include "../core/reactionC.php";
+if (isset($_GET['id'])){
+	$reactionC=new reactionC();
+    $result=$reactionC->recupererreaction($_GET['id']);
 	foreach($result as $row){
-		$name=$row['name'];
-		$login=$row['login'];
-		$comment=$row['comment'];
+		$id=$row['id'];
+		$type=$row['type'];
 		
 ?>
+
 <form method="POST">
 <table class="table">
-<caption>Modifier Commentaire</caption>
+<caption>Modifier Reaction</caption>
 <tr>
-<td>Name</td>
-<td><input type="text" name="name" value="<?PHP echo $name ?>"></td>
+<td>Id</td>
+<td><input type="text" name="id" value="<?PHP echo $id ?>"></td>
 </tr>
 <tr>
-<td>Login</td>
-<td><input type="text" name="login" value="<?PHP echo $login ?>"></td>
-</tr>
-<tr>
-<td>Comment</td>
-<td><input type="text" name="comment" value="<?PHP echo $comment ?>"></td>
+<td>Type</td>
+<td>
+                                        <select type="text" name="type" value="<?PHP echo $type ?>">
+                                          <option>j'aime</option>
+                                          <option>je n'aime pas</option>
+                                        </select>
+                                        </td>
 </tr>
 <tr>
 <td></td>
@@ -77,7 +79,7 @@ if (isset($_GET['login'])){
 </tr>
 <tr>
 <td></td>
-<td><input type="hidden" name="login_ini" value="<?PHP echo $_GET['login'];?>"></td>
+<td><input type="hidden" name="id_ini" value="<?PHP echo $_GET['id'];?>"></td>
 </tr>
 </table>
 </form>
@@ -85,11 +87,11 @@ if (isset($_GET['login'])){
 	}
 }
 if (isset($_POST['modifier'])){
-	$comm=new comm($_POST['name'],$_POST['login'],$_POST['comment']);
-	$commC->modifierComm($comm,$_POST['login_ini']);
-	echo $_POST['login_ini'];
-	header('Location: shop-detail-1.php');
+	$reaction=new reaction($_POST['id'],$_POST['type']);
+	$reactionC->modifierreaction($reaction,$_POST['id_ini']);
+	echo $_POST['id_ini'];
+	header ("Location: shop-detail-1.php");
 }
 ?>
 </body>
-</HTMl>
+</html>

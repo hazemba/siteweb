@@ -19,26 +19,13 @@
 	<link href="dist/css/style.css" rel="stylesheet" type="text/css">
 </head>
 	<?PHP
-include "C:/wamp64/www/themeforest_winkle/core/CommC.php";
+include "C:/wamp64/www/themeforest_winkle/core/reactionC.php";
 
 
 
-$comm1C=new CommC();
+$reaction1C=new reactionC();
+$listereaction=$reaction1C->afficherreactions();
 $db=config::getconnexion();
-
-if(isset($_POST['tri']))
-{
-	$listeComm=$db->query("SELECT * FROM `commentaire` ORDER BY `commentaire`.`login` ASC");
-}
-else if(isset($_POST['tria']))
-{
-	$listeComm=$db->query("SELECT * FROM `commentaire` ORDER BY `commentaire`.`login` DESC");
-	
-}
-else 
-
-$listeComm=$comm1C->afficherComms();
-
 ?>
 
 <body>
@@ -1149,46 +1136,34 @@ $listeComm=$comm1C->afficherComms();
 						<ol class="breadcrumb">
 							<li><a href="index.html">Dashboard</a></li>
 							<li><a href="#"><span>speciality pages</span></a></li>
-							<li class="active"><span>Comments</span></li>
+							<li class="active"><span>Reactions</span></li>
 						</ol>
 					</div>
 					<!-- /Breadcrumb -->
 				</div>
 				<!-- /Title -->
-						<div class="">
-							<div class="crud">
-					<form method="post">
-						<button type="submit" name="tri" class="ti-arrow-up"></button> 
-					  	<button type="submit" name="tria" class="ti-arrow-down"></button>
-						</form>
-							<a href="impression.php" >Imprimer </a>
-						<table class="table">
+						
+<table class="table">
 <tr>
-<td style="width: 10%">Name</td>
-<td style="width: 10%">Login</td>
-<td style="width: 20%">Comment</td>
-<td style="width: 5%" >Supprimer</td>
+<td>Id</td>
+<td>Type</td>
 </tr>
 
 <?PHP
-foreach($listeComm as $row){
+foreach($listereaction as $row){
 	?>
 	<tr>
-	<td><?PHP echo $row['name']; ?></td>
-	<td><?PHP echo $row['login']; ?></td>
-	<td><?PHP echo $row['comment']; ?></td>
-	<td><form method="POST" action="supprimerComm.php">
-	<input type="submit" name="supprimer" value="Supprimer">
-	<input type="hidden" value="<?PHP echo $row['login']; ?>" name="login">
+	<td><?PHP echo $row['id']; ?></td>
+	<td><?PHP echo $row['type']; ?></td>
+	<input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
 	</form>
 	</td>
 	</tr>
 	<?PHP
 }
 ?>
-</table>	
-
-</div>										
+</table>
+										
 				<!-- Footer -->
 				<footer class="footer container-fluid pl-30 pr-30">
 					<div class="row">
