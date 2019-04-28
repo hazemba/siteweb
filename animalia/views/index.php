@@ -6,14 +6,14 @@ session_start ();
 if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
 { 
 
-	 echo 'Votre login est <b>'.$_SESSION['l'].'</b><br>Votre role est : '.$_SESSION['r']; 
-	echo '<a href="./logout.php">Cliquer pour se déconnecter</a>';
+	 echo 'Votre login est <b>'.$_SESSION['l'].'</b><br>Votre role est : '.$_SESSION['r'].'</b><br>Votre id est : '.$_SESSION['i']; 
+	echo '<a href="../session/logout.php">Cliquer pour se déconnecter</a>';
 
 }
 
 else { 
       echo 'Veuillez vous connecter </br>';  
-	  echo '<a href="./auth.html">Cliquer pour se connecter</a>';
+	  echo '<a href="./../../themeforest_winkle/views/e-commerce/login.html">Cliquer pour se connecter</a>';
 
 }  
 //définir la session une session est un tableau temporaire 
@@ -224,7 +224,7 @@ else {
 																	<div class="widget widget_products commerce">
 																		<ul class="product_list_widget">
 																			<li>
-																				<a href="shop-detail-1.html">
+																				<a href="shop-detail-1.php">
 																					<img src="images/products/thumb/product_60x60.jpg" alt="2a"/> 
 																					<span class="product-title">Cras rhoncus duis viverra</span>
 																				</a>
@@ -233,14 +233,14 @@ else {
 																				<span class="amount">&pound;20.00</span>
 																			</li>
 																			<li>
-																				<a href="shop-detail-1.html">
+																				<a href="shop-detail-1.php">
 																					<img src="images/products/thumb/product_60x60.jpg" alt="3a"/> 
 																					<span class="product-title">Morbi sed egestas</span>
 																				</a>
 																				<span class="amount">&pound;123.00</span>
 																			</li>
 																			<li>
-																				<a href="shop-detail-1.html">
+																				<a href="shop-detail-1.php">
 																					<img src="images/products/thumb/product_60x60.jpg" alt="4a"/> 
 																					<span class="product-title">Creamy Spring Pasta</span>
 																				</a>
@@ -443,10 +443,10 @@ else {
 																	<div class="product-images">
 																		<span class="onsale">Sale!</span>
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="328" height="328" src="images/products/brit.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="328" height="328" src="images/products/brit.png" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/brit.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/brit.png" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -468,7 +468,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Premium Brit</a>
+																				<a href="shop-detail-1.php">Premium Brit</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -494,10 +494,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail   ">
-																			<a href="shop-detail-1.html"><img width="450" height="450" style="padding-top: 40px;"  src="images/products/panier.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" style="padding-top: 40px;"  src="images/products/panier.png" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" style="padding-top: 40px;" src="images/products/panier.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" style="padding-top: 40px;" src="images/products/panier.png" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -519,7 +519,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Cage</a>
+																				<a href="shop-detail-1.php">Cage</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -545,10 +545,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/schesir.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/schesir.png" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/schesir.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/schesir.png" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -570,7 +570,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">schesir</a>
+																				<a href="shop-detail-1.php">schesir</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -596,10 +596,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" style="padding-top:50px;" src="images/products/bac.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" style="padding-top:50px;" src="images/products/bac.png" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" style="padding-top:50px;" src="images/products/bac.png" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" style="padding-top:50px;" src="images/products/bac.png" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -621,7 +621,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Bac et Letiere</a>
+																				<a href="shop-detail-1.php">Bac et Letiere</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -647,10 +647,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -672,7 +672,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Shure Microphone</a>
+																				<a href="shop-detail-1.php">Shure Microphone</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -699,10 +699,10 @@ else {
 																	<div class="product-images">
 																		<span class="onsale">Sale!</span>
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -724,7 +724,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Beats Studio</a>
+																				<a href="shop-detail-1.php">Beats Studio</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -751,10 +751,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -776,7 +776,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Urbeats</a>
+																				<a href="shop-detail-1.php">Urbeats</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -804,10 +804,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -829,7 +829,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Magic Mouse</a>
+																				<a href="shop-detail-1.php">Magic Mouse</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -855,10 +855,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -880,7 +880,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Hans Wegner Shell Chair</a>
+																				<a href="shop-detail-1.php">Hans Wegner Shell Chair</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -906,10 +906,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -931,7 +931,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Jens Risom Lounge</a>
+																				<a href="shop-detail-1.php">Jens Risom Lounge</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -957,10 +957,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -982,7 +982,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Eero Saarinen Oval Dining</a>
+																				<a href="shop-detail-1.php">Eero Saarinen Oval Dining</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -1008,10 +1008,10 @@ else {
 																<div class="product-wrap">
 																	<div class="product-images">
 																		<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																		</div>
 																		<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																			<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																			<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																		</div>
 																	</div>
 																</div>
@@ -1033,7 +1033,7 @@ else {
 																		</div>
 																		<div class="info-content-wrap">
 																			<h3 class="product_title">
-																				<a href="shop-detail-1.html">Warren Platner Dining</a>
+																				<a href="shop-detail-1.php">Warren Platner Dining</a>
 																			</h3>
 																			<div class="info-price">
 																				<span class="price">
@@ -1168,10 +1168,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/panier.png" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/panier.png" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/panier.png" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/panier.png" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1193,7 +1193,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Schultz Petal Dining</a>
+																			<a href="shop-detail-1.php">Schultz Petal Dining</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1219,10 +1219,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1244,7 +1244,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Jens Risom Lounge</a>
+																			<a href="shop-detail-1.php">Jens Risom Lounge</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1270,10 +1270,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1295,7 +1295,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Hans Wegner Shell Chair</a>
+																			<a href="shop-detail-1.php">Hans Wegner Shell Chair</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1321,10 +1321,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1346,7 +1346,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Jaime Hayon Ro Chair</a>
+																			<a href="shop-detail-1.php">Jaime Hayon Ro Chair</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1372,10 +1372,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1397,7 +1397,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Saarinen Womb Chair</a>
+																			<a href="shop-detail-1.php">Saarinen Womb Chair</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1423,10 +1423,10 @@ else {
 															<div class="product-wrap">
 																<div class="product-images">
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1448,7 +1448,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Citterio Grand Repos</a>
+																			<a href="shop-detail-1.php">Citterio Grand Repos</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1477,10 +1477,10 @@ else {
 																<div class="product-images">
 																	<span class="onsale">Sale!</span>
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1502,7 +1502,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Arne Jacobsen Oxford Chair</a>
+																			<a href="shop-detail-1.php">Arne Jacobsen Oxford Chair</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">
@@ -1530,10 +1530,10 @@ else {
 																<div class="product-images">
 																	<span class="onsale">Sale!</span>
 																	<div class="shop-loop-thumbnail shop-loop-front-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328.jpg" alt=""/></a>
 																	</div>
 																	<div class="shop-loop-thumbnail shop-loop-back-thumbnail">
-																		<a href="shop-detail-1.html"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
+																		<a href="shop-detail-1.php"><img width="450" height="450" src="images/products/product_328x328alt.jpg" alt=""/></a>
 																	</div>
 																</div>
 															</div>
@@ -1555,7 +1555,7 @@ else {
 																	</div>
 																	<div class="info-content-wrap">
 																		<h3 class="product_title">
-																			<a href="shop-detail-1.html">Charles Pollock Executive</a>
+																			<a href="shop-detail-1.php">Charles Pollock Executive</a>
 																		</h3>
 																		<div class="info-price">
 																			<span class="price">

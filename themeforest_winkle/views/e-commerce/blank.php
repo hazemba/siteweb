@@ -54,8 +54,8 @@ $listeComm=$comm1C->afficherComms();
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
 							<a href="index.html">
-								<img class="brand-img" src="../img/logo.png" alt="brand"/>
-								<span class="brand-text">Winkle</span>
+							
+								<span class="brand-text">Animalia</span>
 							</a>
 						</div>
 					</div>	

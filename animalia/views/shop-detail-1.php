@@ -1,3 +1,26 @@
+<?php
+// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
+session_start ();  
+ $a=$_SESSION['i'];
+
+// On récupère nos variables de session
+if (isset($_SESSION['l']) && isset($_SESSION['p'])) 
+{ 
+
+	 echo 'Votre login est <b>'.$_SESSION['l'].'</b><br>Votre role est : '.$_SESSION['r'].'</b><br>Votre id est : '.$_SESSION['i']; 
+	echo '<a href="../session/logout.php">Cliquer pour se déconnecter</a>';
+
+}
+
+else { 
+      echo 'Veuillez vous connecter </br>';  
+	  echo '<a href="./../../themeforest_winkle/views/e-commerce/login.html">Cliquer pour se connecter</a>';
+
+}  
+//définir la session une session est un tableau temporaire 
+//1 er point c quoi une session
+// 
+?>
 <!doctype html>
 <html lang="en-US">
 	<head>
@@ -27,11 +50,20 @@
 	</head>
 	<?PHP
 include "../core/CommC.php";
-
+  $db = config::getConnexion();
+$req4="SElECT * From produit";
+$listeP=$db->query($req4);
 $comm1C=new CommC();
 $listeComm=$comm1C->afficherComms();
 $reaction1C=new reactionC();
 $listereaction=$reaction1C->afficherreactions();
+$req="SELECT p.id, p.img, SUM(s.etat) total 
+FROM produit p LEFT JOIN avis s
+ON p.id = s.id_prod 
+
+GROUP BY p.id";
+$listePP=$db->query($req);
+
 
 //var_dump($listeEmployes->fetchAll());
 ?>
@@ -371,10 +403,30 @@ $listereaction=$reaction1C->afficherreactions();
 															<div class="caroufredsel product-images-slider" data-synchronise=".single-product-images-slider-synchronise" data-scrollduration="500" data-height="variable" data-scroll-fx="none" data-visible="1" data-circular="1" data-responsive="1">
 																<div class="caroufredsel-wrap">
 																	<ul class="caroufredsel-items">
-																		<li class="caroufredsel-item">
-																			<a href="images/products/detail/detail_800x800.jpg" data-rel="magnific-popup-verticalfit">
-																				<img width="600" height="685" src="images/products/detail/detail_800x800.jpg" alt=""/>
-																			</a>
+																		<li><form>
+																		<?php 
+								foreach ($listePP as $row) {
+								echo'<tr>' ;
+								echo'<td>'.$row['img'].'</td>';
+								
+								echo'<td> Nombre de jaime: '.$row['total'].'</td>';
+								$id_produit = $row['id'];
+								?>
+								</form>
+						<form action="../core/like.php" method="POST">
+						
+					    <input type="hidden" value="<?php echo $id_produit ?>" name="id_produit" id="id_serv" > 
+						<td>  <button class="btn btn-success" name="likeBTN"><span class="ti-thumb-up"></span></button>
+						 <button class="btn btn-danger" name="dislikeBTN"><span class="ti-thumb-down"></span></button> </td>
+
+						</form>
+								<?php
+						  		echo'</tr>';
+						  		# code...
+							}
+							?>
+						
+
 																		</li>
 																		<li class="caroufredsel-item">
 																			<a href="images/products/detail/detail_800x800.jpg" data-rel="magnific-popup-verticalfit">
@@ -536,7 +588,6 @@ $listereaction=$reaction1C->afficherreactions();
 																	<table border="1">
 <tr>
 <td>Name</td>
-<td>Login</td>
 <td style="width: 20%">Comment</td>
 <td style="width: 5%">Supprimer</td>
 <td >Modifier</td>
@@ -547,7 +598,6 @@ foreach($listeComm as $row){
 	?>
 	<tr>
 	<td><?PHP echo $row['name']; ?></td>
-	<td><?PHP echo $row['login']; ?></td>
 	<td><?PHP echo $row['comment']; ?></td>
 	<td><form method="POST" action="supprimerComm.php">
 	<input type="submit" name="supprimer" value="Supprimer">
@@ -561,45 +611,18 @@ foreach($listeComm as $row){
 }
 ?>
 </table>
-<table border="1">
-<tr>
-<td>Id</td>
-<td>Type</td>
-</tr>
 
-<?PHP
-foreach($listereaction as $row){
-	?>
-	<tr>
-	<td><?PHP echo $row['id']; ?></td>
-	<td><?PHP echo $row['type']; ?></td>
-	<td><form method="POST" action="supprimerreaction.php">
-	<input type="submit" name="supprimer" value="supprimer">
-	<input type="hidden" value="<?PHP echo $row['id']; ?>" name="id">
-	</form>
-	</td>
-	<td><a href="modifierreaction.php?id=<?PHP echo $row['id']; ?>">
-	Modifier</a></td>
-	</tr>
-	<?PHP
-}
-?>
-</table>
 																	<div class="comment-respond">
 																		<form method="POST" action="ajoutComm.php">
 																			<table>
 																			<caption>Ajouter Commentaire</caption>
 																			<tr>
 																			<td>Name</td>
-																			<td><input type="text" name="name" id="id"required></td>
+																			<td><input type="text" name="name" id="id"
+																				placeholder="Anonymous" required></td>
 																			<td><span id="missid"></span></td>
 																			</tr>
-																			<tr>
-																			<td>Login</td>
-																			<td><input type="text" name="login" id="idlogin"required></td>
-																			<td><span id="missidlogin"></span></td>
-
-																			</tr>
+																	
 																			<tr>
 																			<td>Comment</td>
 																			<td><input type="text" name="comment" id="idcomm" class="form-control" required></td>
@@ -614,22 +637,17 @@ foreach($listereaction as $row){
 																			</form>
 																			<form method="POST" action="ajoutreaction.php">
 																			<table>
-																			<caption>Ajouter Reaction</caption>
+																			<caption>Ajouter Reclamation</caption>
 																			<tr>
-																			<td>Id</td>
+																			<td>Sujet</td>
 																			<td><input type="text" name="idr" id="idr"required></td>
 																			<td><span id="missidr"></span></td>
 																			</tr>
 																			<tr>
 
-																			<td>Type</td>
-																				
-																				<td>
-	<input type="radio" name="type" <?php if (isset($type) && $type=="J'aime") echo "checked";?> value="J'aime">J'aime
-  	<input type="radio" name="type" <?php if (isset($type) && $type=="Je n'aime pas") echo "checked";?> value="Je n'aime pas">Je n'aime pas
-  <br><br>
-
-																				</td>
+																			<td>Reclamation</td>
+																			<td><input type="text" name="type" id="type" required></td>
+																	
 																			</tr>
 																			<tr>
 																			<td></td>
@@ -1304,26 +1322,6 @@ foreach($listereaction as $row){
                     missidcomm.style.color = 'red';
                 }
             }</script>
-            <script>
-    	var formValid = document.getElementById('bouton1');
-            var idr = document.getElementById('idr');
-            var missidr = document.getElementById('missidr');
-            var idrValid = /[0-9]/;
-            
-            formValid.addEventListener('click', validation6);
-            
-            function validation6(event){
-				//Si le champ est vide
-                if (idr.validity.valueMissing){
-                    event.preventDefault();
-                    missidr.textContent = 'Id manquant';
-                    missidr.style.color = 'red';
-                //Si le format de données est incorrect
-                }else if (idrValid.test(idr.value) == false){
-                    event.preventDefault();
-                   missidr.textContent = 'Format incorrect';
-                   missidr.style.color = 'orange';
-               }
-            }</script>
+        
 	</body>
 </html>

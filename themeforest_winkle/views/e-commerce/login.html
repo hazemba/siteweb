@@ -31,8 +31,8 @@
 			<header class="sp-header">
 				<div class="sp-logo-wrap pull-left">
 					<a href="index.html">
-						<img class="brand-img mr-10" src="../img/logo.png" alt="brand"/>
-						<span class="brand-text">Winkle</span>
+					
+						<span class="brand-text">Animalia</span>
 					</a>
 				</div>
 				<div class="form-group mb-0 pull-right">
@@ -52,25 +52,25 @@
 								<div class="row">
 									<div class="col-sm-12 col-xs-12">
 										<div class="mb-30">
-											<h3 class="text-center txt-dark mb-10">Sign in to Winkle</h3>
+											<h3 class="text-center txt-dark mb-10">Sign in to Animalia</h3>
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>
 										</div>	
 										<div class="form-wrap">
-											<form action="#">
+											<form method ="post" action="../../../animalia/session/connexion.php">
 												<div class="form-group">
-													<label class="control-label mb-10" for="exampleInputEmail_2">Email address</label>
-													<input type="email" class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter email">
+													<label class="control-label mb-10" for="exampleInputEmail_2">Username</label>
+													<input type="text" class="form-control" required="" name="login" id="login" placeholder="Enter Username">
 												</div>
 												<div class="form-group">
-													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
+													<label class="pull-left control-label mb-10" for="exampleInputpwd_2" name="pwd">Password</label>
 													<a class="capitalize-font txt-orange block mb-10 pull-right font-12" href="forgot-password.html">forgot password ?</a>
 													<div class="clearfix"></div>
-													<input type="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter pwd">
+													<input type="password" class="form-control" required="" name="pwd" id="pwd" placeholder="Enter pwd">
 												</div>
 												
 												<div class="form-group">
 													<div class="checkbox checkbox-primary pr-10 pull-left">
-														<input id="checkbox_2" required="" type="checkbox">
+														<input id="checkbox_2"  type="checkbox">
 														<label for="checkbox_2"> Keep me logged in</label>
 													</div>
 													<div class="clearfix"></div>

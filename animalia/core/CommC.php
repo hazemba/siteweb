@@ -10,9 +10,10 @@ function afficherComm ($comm){
         }
        
         function ajouterComm($comm){
-                $sql="insert into commentaire (name,login,comment) values (:name, :login,:comment)";
                 $db = config::getConnexion();
-                try{
+                  $sql="insert into commentaire (name,login,comment) values (:name, :login,:comment)";
+                    
+                    try{
         $req=$db->prepare($sql);
                 
         $name=$comm->getname();
@@ -22,8 +23,11 @@ function afficherComm ($comm){
                 $req->bindValue(':name',$name);
                 $req->bindValue(':login',$login);
                 $req->bindValue(':comment',$comment);
+            
+
+            
                
-                
+     
             $req->execute();
            
         }

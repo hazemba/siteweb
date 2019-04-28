@@ -41,8 +41,8 @@ $db=config::getconnexion();
 					<div class="nav-header pull-left">
 						<div class="logo-wrap">
 							<a href="index.html">
-								<img class="brand-img" src="../img/logo.png" alt="brand"/>
-								<span class="brand-text">Winkle</span>
+								
+								<span class="brand-text">Animalia</span>
 							</a>
 						</div>
 					</div>	
@@ -1129,14 +1129,14 @@ $db=config::getconnexion();
 				<!-- Title -->
 				<div class="row heading-bg">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<h5 class="txt-dark">Comments</h5>
+						<h5 class="txt-dark">Reclamations</h5>
 					</div>
 					<!-- Breadcrumb -->
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						<ol class="breadcrumb">
 							<li><a href="index.html">Dashboard</a></li>
 							<li><a href="#"><span>speciality pages</span></a></li>
-							<li class="active"><span>Reactions</span></li>
+							<li class="active"><span>Reclamations</span></li>
 						</ol>
 					</div>
 					<!-- /Breadcrumb -->
@@ -1145,8 +1145,8 @@ $db=config::getconnexion();
 						
 <table class="table">
 <tr>
-<td>Id</td>
-<td>Type</td>
+<td>Sujet</td>
+<td>Reclamation</td>
 </tr>
 
 <?PHP
