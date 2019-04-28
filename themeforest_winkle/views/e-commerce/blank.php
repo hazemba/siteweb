@@ -650,7 +650,7 @@ $listeComm=$comm1C->afficherComms();
 						<a class="active" href="javascript:void(0);" data-toggle="collapse" data-target="#pages_dr"><div class="pull-left"><i class="ti-shield mr-20"></i><span class="right-nav-text">Pages</span></div><div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>
 						<ul id="pages_dr" class="collapse collapse-level-1">
 							<li>
-								<a class="active-page" href="blank.html">Blank Page</a>
+								<a class="active-page" href="blank1.php">Reclamations</a>
 							</li>
 							<li>
 								<a href="javascript:void(0);" data-toggle="collapse" data-target="#auth_dr">Authantication pages<div class="pull-right"><i class="ti-angle-down "></i></div><div class="clearfix"></div></a>

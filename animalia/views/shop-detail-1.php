@@ -647,6 +647,7 @@ foreach($listeComm as $row){
 
 																			<td>Reclamation</td>
 																			<td><input type="text" name="type" id="type" required></td>
+																			<td><span id="misstype"></span></td>
 																	
 																			</tr>
 																			<tr>
@@ -1322,6 +1323,39 @@ foreach($listeComm as $row){
                     missidcomm.style.color = 'red';
                 }
             }</script>
+        <script>
+    	var formValid = document.getElementById('bouton1');
+            var idr = document.getElementById('idr');
+            var missidr = document.getElementById('missidr');
         
+            
+            formValid.addEventListener('click', validation6);
+            
+            function validation6(event){
+				//Si le champ est vide
+                if (idr.validity.valueMissing){
+                    event.preventDefault();
+                    missidr.textContent = 'Sujet manquant';
+                    missidr.style.color = 'red';
+            
+                }
+            }</script>
+            <script>
+    	var formValid = document.getElementById('bouton1');
+            var type = document.getElementById('type');
+            var misstype = document.getElementById('misstype');
+        
+            
+            formValid.addEventListener('click', validation7);
+            
+            function validation7(event){
+				//Si le champ est vide
+                if (type.validity.valueMissing){
+                    event.preventDefault();
+                    misstype.textContent = 'Reclamation manquant';
+                    misstype.style.color = 'red';
+            
+                }
+            }</script>
 	</body>
 </html>
